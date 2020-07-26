@@ -2,19 +2,26 @@ var list = document.getElementById("list");
 
 
 function addTodo(){
+
+
+
+    
     var todo_item = document.getElementById("todo-item");
-
-
-    // if (document.getElementById("todo-item").value == ""){
-    //     alert("please write your task")
-    //     return false;
-    // }
 
     var li = document.createElement('li')
     var liText = document.createTextNode(todo_item.value)
     li.setAttribute("class", "item_input")
     li.setAttribute("class", "item")
     li.appendChild(liText)
+
+
+    if (todo_item.value==""){
+        alert("please add task first")
+        li.setAttribute("Class","hide")
+    }
+    else if(todo_item==todo_item.value){
+        li.setAttribute("Class","visible")
+    }
 
     
     var delBtn = document.createElement("button")
